@@ -1,0 +1,286 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: Roboto,Arial, Arial, Helvetica, sans-serif;
+}
+
+/* The nav bar*/
+header{
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    padding: 10px 2%;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0  0 10px rgba(0,0,0, 0.2);
+    background: #fff;
+    position: sticky;
+}
+
+.youtube-logo{
+    height: 30px;
+}
+
+.search-bar{
+    flex-grow: 1;
+    display: flex;
+    margin: 0 10rem 0  10rem;
+}
+
+.search-input{
+    width: 100%;
+    font-size: inherit;
+    padding: .4em;
+    border: 1px solid #777;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-radius: 40px 0 0 40px;
+}
+
+.search-btn{
+    display: flex;
+    align-items: center;
+    padding: 0 1.25rem;
+    border: 1px solid #777;
+    border-radius: 0 40px 40px 0;
+    border-left: none;
+    background-color: #f8f8f8;
+    cursor: pointer;
+}
+
+.search-btn:hover{
+    background-color: #f0f0f0;
+}
+
+.menu-icons{
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.menu-channel-icon{
+    border-radius: 50%;
+    width:36px;
+    height:36px;
+    background-color: #aaa;
+}
+
+/* This is the sidebar*/
+
+.sidebar{
+    background: transparent;
+    width: 17%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    padding-left: 2%;
+    padding-top: 60px;
+}
+
+.shortcut-links a{
+    display: flex;
+    align-items: center;
+    margin-bottom: 13px;
+    width: fit-content;
+    flex-wrap: wrap;
+    color:#332f2f;
+    text-decoration: none;
+}
+
+.Subscriptions-list a{
+    display: flex;
+    align-items: center;
+    margin-bottom: 17px;
+    width: fit-content;
+    flex-wrap: wrap;
+    color:#332f2f;
+    text-decoration: none;
+}
+
+shortcut-links a:first-child{
+    color: #eee;
+
+}
+
+.sidebar hr{
+    border: 0;
+    height: 1px;
+    background: #ccc;
+    width: 100%;
+}
+
+.small-sidebar{
+    width: 5%;
+}
+
+.small-sidebar a p{
+    display: none;
+}
+
+.small-sidebar h4{
+    display: none;
+}
+
+/*body*/
+body{
+    margin: 0;
+    background-color: white;
+}
+
+.container{
+    padding-left: 2%;
+    background-color: white;
+}
+
+.categories{
+    padding-left: 8.7rem;
+    display: flex;
+    padding: 9rem, 2%, 20px, 30px  ;
+    border-top: 1px transparent;
+    border-bottom: 1px transparent;
+}
+
+.category-section{
+    padding-top: 10rem;
+    display: flex;
+    overflow: hidden;
+}
+
+.category{
+    padding-top: 10rem;
+    margin-right: 1rem;
+    word-wrap: none;
+    white-space: nowrap;
+    border-radius: 50px;
+    padding: .5rem;
+    cursor: pointer;
+    font-size: inherit;
+    transition: background-color 150ms;
+}
+
+.category.active{
+    background-color: #000000;
+    color: white;
+    border-color: #eee;
+    padding: 2 3rem;
+}
+
+.category:last-child{
+    margin-right: 0;
+}
+
+.video-section{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 0.5rem 0;
+    margin: 0 1.5rem;
+    border-top: 4px solid #ccc;
+}
+
+.video-section:first-child {
+    border-top: none;
+}
+
+.video-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.thumbnail {
+    position: relative;
+    display: flex;
+}
+
+.thumbnail::before{
+    content: attr(data-duration);
+    position: absolute;
+    background-color: rgba(0,0,0, .85);
+    color: white;
+    right:5px;
+    bottom: 5px;
+    padding: .1em .3em;
+    border-radius: .3em;
+    font-size: .9rem;
+}
+
+.thumbnail-image {
+    width: 100%;
+    height: 100%;
+    min-width: 150px;
+    min-height: 150px;
+}
+
+.video-bottom-section{
+    display: flex;
+    align-items: flex-start;
+    margin-top: 1rem;
+}
+
+.channel-icon{
+    margin-right: .75rem;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    background-color: #f3e6e6;
+}
+
+.video-details{
+    display: flex;
+    flex-direction: column;
+}
+
+.video-title{
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: .5rem;
+    text-decoration: none;
+    color: black;
+}
+
+.video-channel-name{
+    margin-bottom: .1rem;
+    text-decoration: none;
+    color: #555;
+    transition: color 150ms;
+}
+
+.video-channel-name:hover{
+    color: #111;
+}
+
+.video-channel-name,
+.video-meta{
+    color: #555;
+}
+
+.video-section-title{
+    grid-column: 1/ -1;
+    margin: .5rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 .5rem;
+}
+
+.video-section-title-close{
+    border: none;
+    background: none;
+    padding: 0;
+    font-size: 2rem;
+    color: #555;
+    cursor: pointer;
+}
+
+.videos{
+    background: #f9f9f9;
+    flex: 1;
+    overflow-y: auto;
+    padding-left: 8.7rem;
+}
+
+
+
+
+
+
